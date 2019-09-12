@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using VideosAPI.Services;
@@ -33,13 +34,20 @@ namespace VideosAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                var options = new WebpackDevMiddlewareOptions()
+                {
+                    HotModuleReplacement = true
+                };
+
+                app.UseWebpackDevMiddleware(options);
             }
 
             app.UseStaticFiles();
 
             videosDbContext.CreateSeedData();
 
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }

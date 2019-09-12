@@ -9,14 +9,14 @@ class VideoList extends React.Component {
     loadVideos() {
         const xhr = new XMLHttpRequest();
 
-        xhr.open('get', this.props.url, false);
+        xhr.open('get', this.props.url);
         xhr.onload = () => {
             const data = JSON.parse(xhr.responseText);
             this.setState({ data: data });
         };
         xhr.send();
     }
-    componentWillMount() {
+    componentDidMount() {
         this.loadVideos();
     }
     render() {
@@ -25,7 +25,7 @@ class VideoList extends React.Component {
         ));
 
         return (
-            <div>{videos}</div>
+            <ul>{videos}</ul>
         );
     }
 };

@@ -3,7 +3,7 @@ import React from 'react';
 class Video extends React.Component {
      render() {
           return (
-               <div>{this.props.videoName} ({this.props.videoYear})</div>
+               <li><strong>{this.props.videoName}:</strong> ({this.props.videoYear})</li>
           );
       }
 };

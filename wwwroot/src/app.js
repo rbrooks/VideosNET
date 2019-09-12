@@ -5,9 +5,7 @@ import VideoList from './videoList.jsx';
 class App extends React.Component {
      render() {
           return (
-               <div>
-                    <VideoList url="/api/videos" />
-               </div>
+               <VideoList url="/api/videos" />
           );
      }
 }
@@ -15,3 +13,5 @@ ReactDOM.render(
      <App />,
      document.getElementById('container')
 );
+
+module.hot.accept();

@@ -1,10 +1,12 @@
 const path = require('path');
 
 module.exports = {
-    entry: './wwwroot/src/app.js',
+    entry: { main: './wwwroot/src/app.js' },
+    mode: 'development',
     output: {
         path: path.resolve(__dirname, 'wwwroot/dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/dist/'
     },
     module: {
         rules: [
