@@ -7,9 +7,9 @@ namespace VideosAPI.Services
     public static class VideosDbContextExtensions
     {
         public static void CreateSeedData
-            (this VideosDbContext context)
+            (this VideosDbContext db)
         {
-            if (context.Videos.Any())
+            if (db.Videos.Any())
                 return;
 
             var videos = new List<Video>()
@@ -36,8 +36,8 @@ namespace VideosAPI.Services
                 }
             };
 
-            context.AddRange(videos);
-            context.SaveChanges();
+            db.AddRange(videos);
+            db.SaveChanges();
         }
     }
 }

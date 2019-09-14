@@ -8,23 +8,23 @@ namespace VideosAPI.Controllers
     [Route("api/[controller]")]
     public class VideosController : ControllerBase
     {
-        private VideosDbContext _context;
+        private VideosDbContext _db;
 
-        public VideosController(VideosDbContext context)
+        public VideosController(VideosDbContext db)
         {
-            _context = context;
+            _db = db;
         }
 
         [HttpGet]
         public ActionResult GetVideos()
         {
-            return Ok(_context.Videos);
+            return Ok(_db.Videos);
         }
 
         [HttpGet("{id}")]
         public ActionResult GetVideo(int id)
         {
-            return Ok(_context.Videos.Find(id));
+            return Ok(_db.Videos.Find(id));
         }
 
         [HttpPut("{id}")]
@@ -35,8 +35,8 @@ namespace VideosAPI.Controllers
                 return BadRequest();
             }
 
-            _context.Videos.Update(video);
-            _context.SaveChanges();
+            _db.Videos.Update(video);
+            _db.SaveChanges();
 
             return NoContent();
         }
@@ -44,8 +44,8 @@ namespace VideosAPI.Controllers
         [HttpPost]
         public ActionResult CreateVideo([FromBody] Video video)
         {
-            _context.Videos.Add(video);
-            _context.SaveChanges();
+            _db.Videos.Add(video);
+            _db.SaveChanges();
 
             return Created($"{Request.GetDisplayUrl()}/{video.Id}", video);
         }
@@ -53,14 +53,14 @@ namespace VideosAPI.Controllers
         [HttpDelete("{id}")]
         public ActionResult DeleteVideo(int id)
         {
-            Video video = _context.Videos.Find(id);
+            Video video = _db.Videos.Find(id);
 
             if (video == null || id != video.Id)
             {
                 return NotFound();
             }
-            _context.Videos.Remove(video);
-            _context.SaveChanges();
+            _db.Videos.Remove(video);
+            _db.SaveChanges();
 
             return NoContent();
         }

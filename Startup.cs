@@ -29,7 +29,7 @@ namespace VideosAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app,
                IHostingEnvironment env,
-               VideosDbContext videosDbContext)
+               VideosDbContext db)
         {
             if (env.IsDevelopment())
             {
@@ -45,7 +45,7 @@ namespace VideosAPI
 
             app.UseStaticFiles();
 
-            videosDbContext.CreateSeedData();
+            db.CreateSeedData();
 
             app.UseMvcWithDefaultRoute();
         }
