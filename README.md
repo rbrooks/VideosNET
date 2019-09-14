@@ -7,11 +7,12 @@ A functioning hobby project to bring my .NET skills up to date. It's a small vid
 This project has:
 
 * **MicroService** - Backed by SQL Server
-  * port: 5001
-  * supports HTTP and HTTPS
+  * **port:** 5001
+  * **routes:** Index, Details, Create, Update, Delete
+  * **protocols:** HTTP and HTTPS
 * **Browser Interface** - Index View that lists all Videos. It makes an XHR to the service.
-  * port: 5000
-  * supports HTTP and HTTPS
+  * **port:** 5000
+  * **routes:** Index. Full CRUD forthcoming.
 
 ## Technologies
 
@@ -63,7 +64,7 @@ All run on MacOS.
 
 ## Screenshots
 
-MicroService JSON Response:
+MicroService JSON Response. Supports full CRUD:
 
 ![image](https://user-images.githubusercontent.com/214047/64888860-f8f81a80-d639-11e9-90b0-d47ed7d21d54.png)
 
