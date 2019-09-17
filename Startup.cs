@@ -19,7 +19,7 @@ namespace VideosAPI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = "Server=localhost,1433;Database=VideosDB;User Id=sa;Password=Passw0rd!";
+            var connectionString = "Server=localhost,1433;Database=Videos;User Id=sa;Password=Passw0rd!";
 
             services.AddDbContext<VideosDbContext>(o => o.UseSqlServer(connectionString));
 
@@ -28,8 +28,7 @@ namespace VideosAPI
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app,
-               IHostingEnvironment env,
-               VideosDbContext db)
+               IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -44,8 +43,6 @@ namespace VideosAPI
             }
 
             app.UseStaticFiles();
-
-            db.CreateSeedData();
 
             app.UseMvcWithDefaultRoute();
         }

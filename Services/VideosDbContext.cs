@@ -8,10 +8,11 @@ namespace VideosAPI.Services
         public DbSet<Video> Videos { get; set; }
 
         public VideosDbContext(
-            DbContextOptions<VideosDbContext> options)
-            : base(options)
-        {
-            Database.EnsureCreated();
+            DbContextOptions<VideosDbContext> options
+        ) : base(options) { }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+            modelBuilder.CreateSeedData();
         }
     }
 }
