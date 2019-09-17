@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: { main: './wwwroot/src/app.js' },
+    entry: { main: './wwwroot/src/components/app.js' },
     mode: 'development',
     output: {
         path: path.resolve(__dirname, 'wwwroot/dist'),

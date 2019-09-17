@@ -1,5 +1,5 @@
 import React from 'react';
-import Video from './video.jsx'
+import Video from './video.jsx';
 
 class VideoList extends React.Component {
     constructor(props) {
@@ -21,11 +21,23 @@ class VideoList extends React.Component {
     }
     render() {
         const videos = this.state.data.map(video => (
-            <Video key={video.id} videoName={video.name} videoYear={video.year} />
+            <Video key={video.id} videoName={video.name} videoDescription={video.description} videoYear={video.year} />
         ));
 
         return (
-            <ul>{videos}</ul>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {videos}
+                </tbody>
+            </table>
         );
     }
 };
