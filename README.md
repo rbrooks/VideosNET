@@ -45,10 +45,13 @@ Ports should be: 1433:1433
 From the root of this proj:
 
 `$ npm install`
+`$ dotnet ef database update`
 
-Upon first load of this app, it will seed the SQL DB with a few records. WebPack compile will happen automatically; no having to run `npm run` every time.
+The Migrations will create the SQL schema and seed the DB with a few records.
 
-`$ dotnet run`
+`$ dotnet watch run`
+
+The WebPack transpile will happen automatically; no having to run an `npm run` script every time. The `watch` part of the command will do the same for the C# code: recompile upon changes.
 
 * Service browseable on 5001: http://localhost:5001/api/videos
 * Web app on 5000: http://localhost:5000/home/
