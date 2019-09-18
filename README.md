@@ -10,9 +10,9 @@ This project has:
   * **port:** 5001
   * **routes:** Index, Details, Create, Update, Delete
   * **protocols:** HTTP and HTTPS
-* **Browser Interface** - Index View that lists all Videos. It makes an XHR to the service.
+* **Browser Interface** - Makes XHR calls to the service.
   * **port:** 5000
-  * **routes:** Index. Full CRUD forthcoming.
+  * **routes:** Index, Create, Delete. Update forthcoming.
 
 ## Technologies
 
@@ -65,10 +65,10 @@ All run on MacOS.
 
 ## Screenshots
 
-MicroService JSON Response. Supports full CRUD:
-
-![image](https://user-images.githubusercontent.com/214047/64888860-f8f81a80-d639-11e9-90b0-d47ed7d21d54.png)
-
 Material-UI-themed React UI (showing XHR call to MicroService):
 
 ![image](https://user-images.githubusercontent.com/214047/65113694-30582580-d9b2-11e9-9a4a-4f18362c0be4.png)
+
+MicroService JSON Response. Supports full CRUD:
+
+![image](https://user-images.githubusercontent.com/214047/64888860-f8f81a80-d639-11e9-90b0-d47ed7d21d54.png)
