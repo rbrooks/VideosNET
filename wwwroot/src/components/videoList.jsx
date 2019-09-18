@@ -5,32 +5,29 @@ class VideoList extends React.Component {
     constructor(props) {
         super(props);
         this.state = { data: [] };
-    }
-    loadVideos() {
+        this.deleteVideo = this.deleteVideo.bind(this);
+   }
+
+    deleteVideo(id) {
         const xhr = new XMLHttpRequest();
 
-        xhr.open('get', this.props.url);
-        xhr.onload = () => {
-            const data = JSON.parse(xhr.responseText);
-            this.setState({ data: data });
-        };
+        xhr.open('delete', this.props.url + '/' + id);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = () => this.props.onVideoReload();
         xhr.send();
     }
-    componentDidMount() {
-        this.loadVideos();
-    }
+
     render() {
-        const videos = this.state.data.map(video => (
-            <Video key={video.id} videoName={video.name} videoDescription={video.description} videoYear={video.year} />
+        const videos = this.props.data.map(video => (
+            <Video onVideoDelete={this.deleteVideo} key={video.id} videoId={video.id} videoName={video.name} videoDescription={video.description} videoYear={video.year} />
         ));
 
         return (
-
-            <table>
+            <table className="videosTable" style={{ float: 'left' }}>
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Date</th>
+                        <th>Year</th>
                         <th>Actions</th>
                     </tr>
                 </thead>

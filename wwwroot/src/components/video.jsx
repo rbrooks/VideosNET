@@ -1,7 +1,16 @@
 import React from 'react';
-import {truncForUi} from '../utils/stringUtils';
+import { truncForUi } from '../utils/stringUtils';
 
 class Video extends React.Component {
+     constructor(props) {
+          super(props);
+          this.handleDel = this.handleDel.bind(this);
+     }
+
+     handleDel(id) {
+          this.props.onVideoDelete(id);
+      }
+
      render() {
           return (
                <tr key={this.props.id}>
@@ -20,7 +29,7 @@ class Video extends React.Component {
                               Edit
                          </button>
                          <button
-                              onClick={() => this.props.deleteVideo(this.props.id)}
+                              onClick={() => this.handleDel(this.props.videoId)}
                               className="button muted-button"
                          >
                               Delete
@@ -28,7 +37,7 @@ class Video extends React.Component {
                     </td>
                </tr>
           );
-      }
+     }
 };
 
 export default Video;
