@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typography, Button, Input, TextField } from "@material-ui/core";
 
 class VideoForm extends React.Component {
     constructor(props) {
@@ -36,14 +37,56 @@ class VideoForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <h3>Add Video</h3>
+            <div style={{ width: '400px', float: 'left' }}>
+                <Typography
+                    variant="h5"
+                    color="inherit"
+                    noWrap
+                >Add Video</Typography>
 
                 <form className="videoForm" onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder="Title" value={this.state.name} required onChange={this.handleNameChange} />
-                    <input type="number" placeholder="Year" value={this.state.year} required onChange={this.handleYearChange} /><br/>
-                    <textarea type="text" placeholder="Description" cols="50" rows="2" value={this.state.description} onChange={this.handleDescChange} /><br/>
-                    <input type="submit" value="Save" />
+                    <TextField
+                        label="Title"
+                        placeholder="Title"
+                        value={this.state.name}
+                        onChange={this.handleNameChange}
+                        required
+                        margin="normal"
+                        variant="filled"
+                        style={{ marginRight: '10px' }}
+                    />
+                    <TextField
+                        type="number"
+                        label="Year"
+                        placeholder="Year"
+                        value={this.state.year}
+                        onChange={this.handleYearChange}
+                        required
+                        margin="normal"
+                        variant="filled"
+                    />
+                    <br />
+                    <TextField
+                        multiline
+                        variant="filled"
+                        rowsMax="4"
+                        placeholder="Description"
+                        cols="100"
+                        rows="4"
+                        value={this.state.description}
+                        onChange={this.handleDescChange}
+                        style={{ marginTop: '10px', width: '390px' }}
+                    />
+                    <br />
+                    <Button
+                        variant="contained"
+                        type="submit"
+                        size="small"
+                        value="Save"
+                        style={{ marginTop: '18px' }}
+                    >
+                        Save
+                    </Button>
                 </form>
             </div>
         );

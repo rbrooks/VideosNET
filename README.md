@@ -22,6 +22,7 @@ Dot Net is now a pleasure to develop on locally on MacOS, since the advent of Do
 * **MS SQL Server** - Yup. Running on my Mac.
 * **React.js** - Frontend
 * **JSX** - Compoenents
+* **Material-UI** - GUI styled with Material-UI CSS framework.
 * **Babel & WebPack** - Transpilation
   * **Hot Module Replacement (HMR)** - Auto-recompiles and refreshes browser on every code change.
 
@@ -68,6 +69,6 @@ MicroService JSON Response. Supports full CRUD:
 
 ![image](https://user-images.githubusercontent.com/214047/64888860-f8f81a80-d639-11e9-90b0-d47ed7d21d54.png)
 
-React.js UI (showing XHR call to MicroService):
+Material-UI-themed React UI (showing XHR call to MicroService):
 
 ![image](https://user-images.githubusercontent.com/214047/65113694-30582580-d9b2-11e9-9a4a-4f18362c0be4.png)

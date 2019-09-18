@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typography, Table, TableBody, TableHead, TableRow, TableCell } from "@material-ui/core";
 import Video from './video.jsx';
 
 class VideoList extends React.Component {
@@ -6,7 +7,7 @@ class VideoList extends React.Component {
         super(props);
         this.state = { data: [] };
         this.deleteVideo = this.deleteVideo.bind(this);
-   }
+    }
 
     deleteVideo(id) {
         const xhr = new XMLHttpRequest();
@@ -23,18 +24,26 @@ class VideoList extends React.Component {
         ));
 
         return (
-            <table className="videosTable" style={{ float: 'left' }}>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Year</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {videos}
-                </tbody>
-            </table>
+            <div>
+                <Typography
+                    variant="h4"
+                    color="inherit"
+                    noWrap
+                >Video Library</Typography>
+
+                <Table className="videosTable" style={{ width: '55%', float: 'left', marginRight: '20px' }}>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Name</TableCell>
+                            <TableCell>Year</TableCell>
+                            <TableCell>Actions</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {videos}
+                    </TableBody>
+                </Table>
+            </div>
         );
     }
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, TableRow, TableCell } from "@material-ui/core";
 import { truncForUi } from '../utils/stringUtils';
 
 class Video extends React.Component {
@@ -13,29 +14,28 @@ class Video extends React.Component {
 
      render() {
           return (
-               <tr key={this.props.id}>
-                    <td>
+               <TableRow key={this.props.id}>
+                    <TableCell>
                          <strong>{this.props.videoName}</strong><br />
                          {truncForUi(this.props.videoDescription)}
-                    </td>
-                    <td>({this.props.videoYear})</td>
-                    <td>
-                         <button
+                    </TableCell>
+                    <TableCell>({this.props.videoYear})</TableCell>
+                    <TableCell style={{ whiteSpace: 'nowrap' }}>
+                         <Button variant="contained" color="primary" size="small"
                               onClick={() => {
                                    this.props.editVideo(this.props)
                               }}
-                              className="button muted-button"
+                              style={{ marginRight: '10px' }}
                          >
                               Edit
-                         </button>
-                         <button
+                         </Button>
+                         <Button variant="contained" color="secondary" size="small"
                               onClick={() => this.handleDel(this.props.videoId)}
-                              className="button muted-button"
                          >
                               Delete
-                         </button>
-                    </td>
-               </tr>
+                         </Button>
+                    </TableCell>
+               </TableRow>
           );
      }
 };
