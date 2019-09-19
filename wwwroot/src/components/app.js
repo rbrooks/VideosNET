@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Grid from '@material-ui/core/Grid';
 import VideoList from './videoList.jsx';
 import VideoForm from './videoForm.jsx';
+
 
 class App extends React.Component {
      constructor(props) {
@@ -39,10 +41,14 @@ class App extends React.Component {
 
      render() {
           return (
-               <div className="videosBox">
-                    <VideoList url="/api/videos" onVideoReload={this.loadVideos} data={this.state.data} />
-                    <VideoForm url="/api/videos" onVideoSubmit={this.handleVideoSubmit} />
-               </div>
+               <Grid container spacing={3}>
+                    <Grid item xs>
+                         <VideoList url="/api/videos" onVideoReload={this.loadVideos} data={this.state.data} />
+                    </Grid>
+                    <Grid item xs={4}>
+                         <VideoForm url="/api/videos" onVideoSubmit={this.handleVideoSubmit} />
+                    </Grid>
+               </Grid>
           );
      }
 }

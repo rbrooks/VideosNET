@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button, TableRow, TableCell } from "@material-ui/core";
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 import { truncForUi } from '../utils/stringUtils';
 
 class Video extends React.Component {
@@ -10,7 +12,7 @@ class Video extends React.Component {
 
      handleDel(id) {
           this.props.onVideoDelete(id);
-      }
+     }
 
      render() {
           return (
@@ -27,12 +29,14 @@ class Video extends React.Component {
                               }}
                               style={{ marginRight: '10px' }}
                          >
-                              Edit
+                              <EditIcon />
                          </Button>
                          <Button variant="contained" color="secondary" size="small"
-                              onClick={() => this.handleDel(this.props.videoId)}
+                              onClick={() => {
+                                   this.handleDel(this.props.videoId)
+                              }}
                          >
-                              Delete
+                              <DeleteIcon />
                          </Button>
                     </TableCell>
                </TableRow>

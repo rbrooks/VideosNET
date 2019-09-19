@@ -1,5 +1,6 @@
 import React from 'react';
-import { Typography, Button, Input, TextField } from "@material-ui/core";
+import { Typography, Button, TextField } from "@material-ui/core";
+import SaveIcon from '@material-ui/icons/Save';
 
 class VideoForm extends React.Component {
     constructor(props) {
@@ -37,7 +38,7 @@ class VideoForm extends React.Component {
 
     render() {
         return (
-            <div style={{ width: '400px', float: 'left' }}>
+            <div>
                 <Typography
                     variant="h5"
                     color="inherit"
@@ -51,9 +52,9 @@ class VideoForm extends React.Component {
                         value={this.state.name}
                         onChange={this.handleNameChange}
                         required
+                        fullWidth
                         margin="normal"
                         variant="filled"
-                        style={{ marginRight: '10px' }}
                     />
                     <TextField
                         type="number"
@@ -70,21 +71,21 @@ class VideoForm extends React.Component {
                         multiline
                         variant="filled"
                         rowsMax="4"
+                        margin="normal"
                         placeholder="Description"
-                        cols="100"
+                        fullWidth
                         rows="4"
                         value={this.state.description}
                         onChange={this.handleDescChange}
-                        style={{ marginTop: '10px', width: '390px' }}
                     />
                     <br />
                     <Button
                         variant="contained"
                         type="submit"
                         size="small"
-                        value="Save"
-                        style={{ marginTop: '18px' }}
+                        style={{ marginTop: 15 }}
                     >
+                        <SaveIcon />
                         Save
                     </Button>
                 </form>

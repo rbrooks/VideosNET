@@ -31,7 +31,7 @@ class VideoList extends React.Component {
                     noWrap
                 >Video Library</Typography>
 
-                <Table className="videosTable" style={{ width: '55%', float: 'left', marginRight: '20px' }}>
+                <Table className="videosTable">
                     <TableHead>
                         <TableRow>
                             <TableCell>Name</TableCell>
