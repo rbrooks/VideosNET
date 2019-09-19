@@ -70,7 +70,7 @@ All run on MacOS.
 
 Material-UI-themed React UI (showing XHR call to MicroService):
 
-![image](https://user-images.githubusercontent.com/214047/65113694-30582580-d9b2-11e9-9a4a-4f18362c0be4.png)
+![image](https://user-images.githubusercontent.com/214047/65206569-cfd1f280-da5c-11e9-9252-cb479afa89d8.png)
 
 MicroService JSON Response. Supports full CRUD:
 
