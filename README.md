@@ -9,6 +9,7 @@ This project has:
 * **MicroService** - Backed by SQL Server
   * **port:** 5001
   * **routes:** Index, Details, Create, Update, Delete
+  * **RESTful**
   * **protocols:** HTTP and HTTPS
 * **Browser Interface** - Makes XHR calls to the service.
   * **port:** 5000
@@ -16,7 +17,7 @@ This project has:
 
 ## Technologies
 
-Dot Net is now a pleasure to develop on locally on MacOS, since the advent of Docker and MS open-sourcing .NET.
+Dot Net is a pleasure to develop on locally on MacOS, since the advent of Docker and MS open-sourcing .NET.
 
 * **C# on ASP.NET Core** - Yup. Running on my Mac.
 * **MS SQL Server** - Yup. Running on my Mac.
