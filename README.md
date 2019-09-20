@@ -71,7 +71,7 @@ All run on MacOS.
 
 Dark-themed React GUI:
 
-![image](https://user-images.githubusercontent.com/214047/65304048-9dec8900-db4d-11e9-90fb-4e409462ec1d.png)
+![image](https://user-images.githubusercontent.com/214047/65363869-14d06300-dbdc-11e9-82e6-c4e508b596cc.png)
 
 MicroService JSON Response. Supports full CRUD:
 
