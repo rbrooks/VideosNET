@@ -12,13 +12,13 @@ This project has:
   * **protocols:** HTTP and HTTPS
 * **Browser Interface** - Makes XHR calls to the service.
   * **port:** 5000
-  * **routes:** Index, Create, Delete. Update forthcoming.
+  * **routes:** Index, Create, Upadte, Delete
 
 ## Technologies
 
 Dot Net is now a pleasure to develop on locally on MacOS, since the advent of Docker and MS open-sourcing .NET.
 
-* **C# on ASP.NET** - Yup. Running on my Mac.
+* **C# on ASP.NET Core** - Yup. Running on my Mac.
 * **MS SQL Server** - Yup. Running on my Mac.
 * **React.js** - Frontend
 * **JSX** - Compoenents
