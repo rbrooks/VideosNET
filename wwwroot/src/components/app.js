@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 import VideoList from './videoList.jsx';
 import VideoForm from './videoForm.jsx';
-
 
 class App extends React.Component {
      constructor(props) {
@@ -26,34 +29,40 @@ class App extends React.Component {
 
      handleNameChange(e) {
           this.state.video.name = e.target.value;
-          this.setState({ video: {
-               id: this.state.video.id,
-               name: e.target.value,
-               description: this.state.video.description,
-               year: this.state.video.year,
-               edit: this.state.video.edit
-          }});
-      }
-
-      handleDescChange(e) {
-          this.setState({ video: {
-               id: this.state.video.id,
-               name: this.state.video.name,
-               description: e.target.value,
-               year: this.state.video.year,
-               edit: this.state.video.edit
-          }});
+          this.setState({
+               video: {
+                    id: this.state.video.id,
+                    name: e.target.value,
+                    description: this.state.video.description,
+                    year: this.state.video.year,
+                    edit: this.state.video.edit
+               }
+          });
      }
 
-      handleYearChange(e) {
-          this.setState({ video: {
-               id: this.state.video.id,
-               name: this.state.video.name,
-               description: this.state.video.description,
-               year: e.target.value,
-               edit: this.state.video.edit
-          }});
-      }
+     handleDescChange(e) {
+          this.setState({
+               video: {
+                    id: this.state.video.id,
+                    name: this.state.video.name,
+                    description: e.target.value,
+                    year: this.state.video.year,
+                    edit: this.state.video.edit
+               }
+          });
+     }
+
+     handleYearChange(e) {
+          this.setState({
+               video: {
+                    id: this.state.video.id,
+                    name: this.state.video.name,
+                    description: this.state.video.description,
+                    year: e.target.value,
+                    edit: this.state.video.edit
+               }
+          });
+     }
 
      loadVideos() {
           const xhr = new XMLHttpRequest();
@@ -88,7 +97,7 @@ class App extends React.Component {
                name: this.state.video.name.trim(),
                description: this.state.video.description.trim(),
                year: this.state.video.year
-           };
+          };
           const xhr = new XMLHttpRequest();
 
           xhr.open('put', this.props.url + '/' + video.id);
@@ -110,7 +119,7 @@ class App extends React.Component {
 
      clearForm() {
           this.setState({
-               video: {id: 0,  name: '', description: '', year: '' }
+               video: { id: 0, name: '', description: '', year: '' }
           });
      }
 
@@ -123,22 +132,35 @@ class App extends React.Component {
                          <VideoList url="/api/videos" onVideoEdit={this.handleEdt} onVideoReload={this.loadVideos} data={this.state.data} />
                     </Grid>
                     <Grid item xs={4}>
-                         <VideoForm url="/api/videos"
-                              onNameChange={this.handleNameChange}
-                              onDescChange={this.handleDescChange}
-                              onYearChange={this.handleYearChange}
-                              onVideoAdd={this.handleVideoAdd}
-                              onVideoUpdate={this.handleVideoUpdate}
-                              onCancel={this.clearForm}
-                              {...video} />
+                         <Paper elevation={3} style={{ padding: 16, marginTop: 88 }}>
+                              <VideoForm url="/api/videos"
+                                   onNameChange={this.handleNameChange}
+                                   onDescChange={this.handleDescChange}
+                                   onYearChange={this.handleYearChange}
+                                   onVideoAdd={this.handleVideoAdd}
+                                   onVideoUpdate={this.handleVideoUpdate}
+                                   onCancel={this.clearForm}
+                                   {...video} />
+                         </Paper>
                     </Grid>
                </Grid>
-          );
-     }
-}
-ReactDOM.render(
-     <App url="/api/videos" />,
-     document.getElementById('container')
-);
+                         );
+                    }
+               }
+
+const theme = createMuiTheme({
+                              palette: {
+                              type: 'dark',
+                    },
+               });
+
+               ReactDOM.render(
+     <ThemeProvider theme={theme}>
+                              <CssBaseline />
+                              <App url="/api/videos" />
+                         </ThemeProvider>,
+
+                         document.getElementById('container')
+                    );
 
 module.hot.accept();

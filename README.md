@@ -2,7 +2,7 @@
 
 ## Overview
 
-A functioning hobby project to bring my .NET skills up to date. It's a small video-management system. It runs on MacOS.
+A functioning hobby project to bring my .NET skills up to date. It's a small, single-page video-management system. It runs on MacOS.
 
 This project has:
 
@@ -22,7 +22,7 @@ Dot Net is now a pleasure to develop on locally on MacOS, since the advent of Do
 * **MS SQL Server** - Yup. Running on my Mac.
 * **React.js** - Frontend
 * **JSX** - Compoenents
-* **Material-UI** - GUI styled with Material-UI CSS framework.
+* **Material-UI** - Dark GUI styled with Material-UI CSS framework.
 * **Babel & WebPack** - Transpilation
   * **Hot Module Replacement (HMR)** - Auto-recompiles and refreshes browser on every code change.
 
@@ -68,10 +68,10 @@ All run on MacOS.
 
 ## Screenshots
 
-Material-UI-themed React UI (showing XHR call to MicroService):
+Dark-themed React GUI:
 
-![image](https://user-images.githubusercontent.com/214047/65206569-cfd1f280-da5c-11e9-9252-cb479afa89d8.png)
+![image](https://user-images.githubusercontent.com/214047/65304048-9dec8900-db4d-11e9-90fb-4e409462ec1d.png)
 
 MicroService JSON Response. Supports full CRUD:
 
-![image](https://user-images.githubusercontent.com/214047/64888860-f8f81a80-d639-11e9-90b0-d47ed7d21d54.png)
+![image](https://user-images.githubusercontent.com/214047/65304104-ceccbe00-db4d-11e9-99d9-381d0dea46d6.png)
