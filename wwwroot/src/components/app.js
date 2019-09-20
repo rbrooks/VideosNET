@@ -144,23 +144,23 @@ class App extends React.Component {
                          </Paper>
                     </Grid>
                </Grid>
-                         );
-                    }
-               }
+          );
+     }
+}
 
 const theme = createMuiTheme({
-                              palette: {
-                              type: 'dark',
-                    },
-               });
+     palette: {
+          type: 'dark',
+     },
+});
 
-               ReactDOM.render(
+ReactDOM.render(
      <ThemeProvider theme={theme}>
-                              <CssBaseline />
-                              <App url="/api/videos" />
-                         </ThemeProvider>,
+          <CssBaseline />
+          <App url="/api/videos" />
+     </ThemeProvider>,
 
-                         document.getElementById('container')
-                    );
+     document.getElementById('container')
+);
 
 module.hot.accept();
