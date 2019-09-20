@@ -1,12 +1,13 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Typography, Table, TableBody, TableHead, TableRow, TableCell } from "@material-ui/core";
 import Video from './video.jsx';
 
 class VideoList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { data: [] };
         this.deleteVideo = this.deleteVideo.bind(this);
+        this.editVideo = this.editVideo.bind(this);
     }
 
     deleteVideo(id) {
@@ -18,9 +19,13 @@ class VideoList extends React.Component {
         xhr.send();
     }
 
+    editVideo(video) {
+        this.props.onVideoEdit(video);
+    }
+
     render() {
         const videos = this.props.data.map(video => (
-            <Video onVideoDelete={this.deleteVideo} key={video.id} videoId={video.id} videoName={video.name} videoDescription={video.description} videoYear={video.year} />
+            <Video onVideoEdit={this.editVideo} onVideoDelete={this.deleteVideo} key={video.id} data={video} />
         ));
 
         return (
@@ -31,7 +36,7 @@ class VideoList extends React.Component {
                     noWrap
                 >Video Library</Typography>
 
-                <Table className="videosTable">
+                <Table>
                     <TableHead>
                         <TableRow>
                             <TableCell>Name</TableCell>
