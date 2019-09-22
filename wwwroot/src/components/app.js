@@ -5,6 +5,9 @@ import Paper from '@material-ui/core/Paper';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import TypoGraphy from '@material-ui/core/Typography'
 import VideoList from './videoList.jsx';
 import VideoForm from './videoForm.jsx';
 
@@ -28,7 +31,6 @@ class App extends React.Component {
      }
 
      handleNameChange(e) {
-          this.state.video.name = e.target.value;
           this.setState({
                video: {
                     id: this.state.video.id,
@@ -127,23 +129,34 @@ class App extends React.Component {
           const video = this.state.video;
 
           return (
-               <Grid container spacing={3}>
-                    <Grid item xs>
-                         <VideoList url="/api/videos" onVideoEdit={this.handleEdt} onVideoReload={this.loadVideos} data={this.state.data} />
+               <div>
+                    <AppBar position="static">
+                         <Toolbar>
+                              <TypoGraphy variant="h6"
+                                   color="inherit"
+                              >
+                                   Videos.NET
+                              </TypoGraphy>
+                         </Toolbar>
+                    </AppBar>
+                    <Grid container spacing={3} style={{padding: 24}}>
+                         <Grid item xs>
+                              <VideoList url="/api/videos" onVideoEdit={this.handleEdt} onVideoReload={this.loadVideos} data={this.state.data} />
+                         </Grid>
+                         <Grid item xs={4}>
+                              <Paper elevation={3} style={{ padding: 16, marginTop: 88 }}>
+                                   <VideoForm url="/api/videos"
+                                        onNameChange={this.handleNameChange}
+                                        onDescChange={this.handleDescChange}
+                                        onYearChange={this.handleYearChange}
+                                        onVideoAdd={this.handleVideoAdd}
+                                        onVideoUpdate={this.handleVideoUpdate}
+                                        onCancel={this.clearForm}
+                                        {...video} />
+                              </Paper>
+                         </Grid>
                     </Grid>
-                    <Grid item xs={4}>
-                         <Paper elevation={3} style={{ padding: 16, marginTop: 88 }}>
-                              <VideoForm url="/api/videos"
-                                   onNameChange={this.handleNameChange}
-                                   onDescChange={this.handleDescChange}
-                                   onYearChange={this.handleYearChange}
-                                   onVideoAdd={this.handleVideoAdd}
-                                   onVideoUpdate={this.handleVideoUpdate}
-                                   onCancel={this.clearForm}
-                                   {...video} />
-                         </Paper>
-                    </Grid>
-               </Grid>
+               </div>
           );
      }
 }
