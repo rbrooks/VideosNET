@@ -7,24 +7,23 @@ A functioning hobby project to bring my .NET skills up to date. It's a small, si
 This project has:
 
 * **MicroService** - Backed by SQL Server
-  * **port:** 5001
   * **routes:** Index, Details, Create, Update, Delete
   * **RESTful**
   * **protocols:** HTTP and HTTPS
 * **Browser Interface** - Makes XHR calls to the service.
-  * **port:** 5000
   * **routes:** Index, Create, Upadte, Delete
 
 ## Technologies
 
 Dot Net is a pleasure to develop on locally on MacOS, since the advent of Docker and MS open-sourcing .NET.
 
-* **C# on ASP.NET Core** - Yup. Running on my Mac.
-* **MS SQL Server** - Yup. Running on my Mac.
+* **C# on ASP.NET Core** - Running on my Mac. :smile:
+* **MS SQL Server** - Running on my Mac. :smile:
 * **React.js** - Frontend
-* **JSX** - Compoenents
+  * **JSX** - Compoenents
 * **Material-UI** - Dark GUI styled with Material-UI CSS framework.
-* **Babel & WebPack** - Transpilation
+  * **Resposive Design** - Adapts to mobile
+* **Babel & WebPack** - Transpilation and ES6 support
   * **Hot Module Replacement (HMR)** - Auto-recompiles and refreshes browser on every code change.
 
 ## Setup
@@ -54,7 +53,7 @@ The Migrations will create the SQL schema and seed the DB with a few records.
 
 The WebPack transpile will happen automatically; no having to run an `npm run` script every time. The `watch` part of the command will do the same for the C# code: recompile upon changes.
 
-* Service browseable on 5001: http://localhost:5001/api/videos
+* Service browseable at: http://localhost:5000/api/videos
 * Web app on 5000: http://localhost:5000/home/
 
 Service must be running for the Web app to work. It makes an XHR call to it.
