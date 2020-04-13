@@ -2,7 +2,7 @@
 
 ## Overview
 
-A functioning hobby project to bring my C# and .NET skills up to date. It's a small, single-page video-management system. It runs on MacOS.
+A functioning hobby project to bring my C#, .NET Core and React.js skills up to date. It's a small, single-page video-management system. It runs on MacOS.
 
 This project has:
 
