@@ -19,8 +19,8 @@ Dot Net is a pleasure to develop on locally on MacOS, since the advent of Docker
 
 * **C# on ASP.NET Core** - Running on my Mac. :smile:
 * **MS SQL Server** - Running on my Mac. :smile:
-* **React.js** - Frontend
-  * **JSX** - Compoenents
+* **React.js** - Frontend Web Components
+  * **JSX**
 * **Material-UI** - Dark GUI styled with Material-UI CSS framework.
   * **Resposive Design** - Adapts to mobile
 * **Babel & WebPack** - Transpilation and ES6 support
