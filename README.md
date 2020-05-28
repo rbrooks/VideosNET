@@ -58,14 +58,6 @@ The WebPack transpile will happen automatically; no having to run an `npm run` s
 
 Service must be running for the Web app to work. It makes an XHR call to it.
 
-## Tools
-
-All run on MacOS.
-
-* **[VS Code](https://code.visualstudio.com/)**
-* **[MS Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/download?view=sql-server-2017)**
-* **[Kitematic](https://kitematic.com/)**
-
 ## Screenshots
 
 Dark-themed React GUI:
